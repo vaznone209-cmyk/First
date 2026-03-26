@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Vocabulary Learner</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>My Vocabulary</h1>
+      <button id="export-btn" class="btn-export" title="Export to CSV for Anki">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Export
+      </button>
+    </header>
+
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Search words...">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </div>
+
+    <div id="word-list" class="word-list">
+      <!-- Words will be populated here -->
+    </div>
+
+    <div id="empty-state" class="empty-state" style="display: none;">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+      </svg>
+      <p>No words saved yet</p>
+      <span>Highlight text on any page to learn new words</span>
+    </div>
+
+    <div id="loading-state" class="loading-state" style="display: none;">
+      <div class="spinner"></div>
+      <span>Loading...</span>
+    </div>
+
+    <footer class="popup-footer">
+      <a href="#" id="options-link">Settings</a>
+      <span class="word-count" id="word-count">0 words</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
